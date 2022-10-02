@@ -26,8 +26,8 @@ def get_embedding(query: str):
 
 def main():
     
-    args_1: tuple = ("--text1", "-t1")
-    args_2: tuple = ("--text2", "-t2")
+    args_1: tuple = ("--query1", "-q1")
+    args_2: tuple = ("--query2", "-q2")
     args_3: tuple = ("--get-embedding", "-ge")
 
     query_1: str = "This is sentence 1"
