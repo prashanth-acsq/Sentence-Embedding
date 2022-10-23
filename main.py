@@ -15,13 +15,8 @@ MODEL = SentenceTransformer(MODEL_PATH)
 def cosine_similarity(a: np.ndarray, b: np.ndarray) -> float: return np.dot(a, b.reshape(-1, 1)) / (np.linalg.norm(a) * np.linalg.norm(b))
 
 
-def get_embedding(query: Union[str, list]):
-    if isinstance(query, list):
-        query = [kb_item.lower() for kb_item in query]
-        query = [remove_stopwords(kb_item) for kb_item in query]
-    else:
-        query = query.lower()
-        query = remove_stopwords(query)
+def get_embedding(query: str):
+    query = remove_stopwords(query.lower())
     return MODEL.encode(query)
 
 
